@@ -41,4 +41,8 @@ public class Calculator {
     public static int multiply(int a, int b) {
         return a * b;
     }
+
+    public static boolean isEquals(int a, int b) {
+        return a == b;
+    }
 }

@@ -1,13 +1,17 @@
 package org.campus02.student.calculator;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 class CalculatorTest {
+
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("Wird nur einmal am Beginn ausgeführt");
+    }
 
     @BeforeEach
     void setUp() {
+
         System.out.println("Werde vor jedem Test aufgerufen");
     }
 
@@ -22,11 +26,24 @@ class CalculatorTest {
 
     @Test
     void subtract() {
+        // int subtractResult = Calculator.subtract(3,2);
+        // int expected = 1;
+        Assertions.assertEquals(1, Calculator.subtract(3, 2));
     }
 
     @Test
     void multiply() {
+        Assertions.assertEquals(6, Calculator.multiply(3,2));
     }
 
 
+    @Test
+    void isEquals() {
+        Assertions.assertTrue(Calculator.isEquals(1,1));
+    }
+
+    @Test
+    void isNotEquals() {
+        Assertions.assertFalse(Calculator.isEquals(2, 1));
+    }
 }
